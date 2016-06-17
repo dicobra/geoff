@@ -94,17 +94,18 @@ function arrayBufferToBase64ImagePNG(buffer) {
               ':' + tempo.getSeconds() + '<br/></div>';
 
 
-        var lat = position.coords.latitude;
-        var long= position.coords.longitude;
+        // var lat = position.coords.latitude;
+        // var long= position.coords.longitude;
 
 var dbname = 'tile';
 var db = new PouchDB(dbname);
 
-var map = L.map('map').setView([lat, long], 14.9999);
+var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 14.9999);
 new StorageTileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {storage: db}).addTo(map);
 
-L.marker([lat, long]).addTo(map)
-    .bindPopup('latitude' + lat + 'longitude' + long)
+
+L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)
+    .bindPopup('latitude' + position.coords.latitude + 'longitude' + position.coords.longitude)
     .openPopup();
 
 

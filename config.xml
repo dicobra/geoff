@@ -5,7 +5,7 @@
        Map offline for you application.
     </description>
     <author email="ti.viniciust@gmail.com" href="http://#">
-        PhoneGap Team
+        Vinicius Team
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
